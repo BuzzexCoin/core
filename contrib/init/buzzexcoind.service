@@ -1,0 +1,26 @@
+[Unit]
+Description=BuzzexCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=buzzexcoin
+Group=buzzexcoin
+
+Type=forking
+PIDFile=/var/lib/buzzexcoind/buzzexcoind.pid
+
+ExecStart=/usr/bin/buzzexcoind -daemon -pid=/var/lib/buzzexcoind/buzzexcoind.pid \
+          -conf=/etc/buzzexcoin/buzzexcoin.conf -datadir=/var/lib/buzzexcoind
+
+ExecStop=-/usr/bin/buzzexcoin-cli -conf=/etc/buzzexcoin/buzzexcoin.conf \
+         -datadir=/var/lib/buzzexcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

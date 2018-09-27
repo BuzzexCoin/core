@@ -1,0 +1,26 @@
+# /etc/conf.d/buzzexcoind: config file for /etc/init.d/buzzexcoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/buzzexcoin/buzzexcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/buzzexcoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/buzzexcoind.pid"
+
+# Where to write buzzexcoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/buzzexcoind"
+
+# User and group to own buzzexcoind process
+#BITCOIND_USER="buzzexcoin"
+#BITCOIND_GROUP="buzzexcoin"
+
+# Path to buzzexcoind executable
+#BITCOIND_BIN="/usr/bin/buzzexcoind"
+
+# Nice value to run buzzexcoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

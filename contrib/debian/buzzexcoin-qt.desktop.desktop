@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BuzzexCoin
+Comment=BuzzexCoin P2P Cryptocurrency
+Exec=buzzexcoin-qt %u
+Terminal=false
+Type=Application
+Icon=buzzexcoin128
+MimeType=x-scheme-handler/buzzexcoin;
+Categories=Office;Finance;
+Name[en_US]=buzzexcoin-qt.desktop
