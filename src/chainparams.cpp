@@ -98,7 +98,7 @@ public:
         pchMessageStart[3] = 0xae;
         vAlertPubKey = ParseHex("04d2df519f53e2eaa4a7d7ff3347a360520c2f4b8f07d0241b5b6ba5ce8e3d6ecba5443696473a387adff27aa6bb72b952ff23026e088cff9f47cbb387ed52c326");
         nDefaultPort = 9333;
-        bnProofOfWorkLimit = ~uint256(0) >> 1;
+        bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 1050000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
@@ -111,7 +111,7 @@ public:
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 750000000 * COIN;
 
-        nLastPOWBlock = 74;
+        nLastPOWBlock = 75001;
         nModifierUpdateBlock = 1;
 
         const char* pszTimestamp = "The Independent 17/Sep/2018: The IndependentNext global financial crisis will strike in 2020";
