@@ -107,11 +107,11 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; 
         nTargetSpacing = 1 * 60;  // BuzzexCoin: 1 minute
-        nMaturity = 10;
+        nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 750000000 * COIN;
 
-        nLastPOWBlock = 75001;
+        nLastPOWBlock = 2500;
         nModifierUpdateBlock = 1;
 
         const char* pszTimestamp = "The Independent 17/Sep/2018: The IndependentNext global financial crisis will strike in 2020";
