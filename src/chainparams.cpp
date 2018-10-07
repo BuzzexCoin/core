@@ -111,7 +111,7 @@ public:
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 750000000 * COIN;
 
-        nLastPOWBlock = 2500;
+        nLastPOWBlock = 1250;
         nModifierUpdateBlock = 1;
 
         const char* pszTimestamp = "The Independent 17/Sep/2018: The IndependentNext global financial crisis will strike in 2020";

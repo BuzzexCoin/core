@@ -975,7 +975,8 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
 
 bool MoneyRange(CAmount nValueOut)
 {
-    return nValueOut >= 0 && nValueOut <= Params().MaxMoneyOut();
+//    return nValueOut >= 0 && nValueOut <= Params().MaxMoneyOut();
+    return nValueOut >= 0;
 }
 
 bool CheckTransaction(const CTransaction& tx, CValidationState& state)
@@ -1001,9 +1002,9 @@ bool CheckTransaction(const CTransaction& tx, CValidationState& state)
         if (txout.nValue < 0)
             return state.DoS(100, error("CheckTransaction() : txout.nValue negative"),
                 REJECT_INVALID, "bad-txns-vout-negative");
-        if (txout.nValue > Params().MaxMoneyOut())
-            return state.DoS(100, error("CheckTransaction() : txout.nValue too high"),
-                REJECT_INVALID, "bad-txns-vout-toolarge");
+//        if (txout.nValue > Params().MaxMoneyOut())
+//            return state.DoS(100, error("CheckTransaction() : txout.nValue too high"),
+//                REJECT_INVALID, "bad-txns-vout-toolarge");
         nValueOut += txout.nValue;
         if (!MoneyRange(nValueOut))
             return state.DoS(100, error("CheckTransaction() : txout total out of range"),
@@ -1620,18 +1621,18 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 	
 	if (nHeight < Params().LAST_POW_BLOCK()) {
-		nSubsidy = 300000 * COIN;
+		nSubsidy = 600000 * COIN;
 	} else {
 		nSubsidy = 50 * COIN;
 	}
 
-    int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
+//    int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
-    if (nMoneySupply + nSubsidy >= Params().MaxMoneyOut())
-        nSubsidy = Params().MaxMoneyOut() - nMoneySupply;
+//    if (nMoneySupply + nSubsidy >= Params().MaxMoneyOut())
+//        nSubsidy = Params().MaxMoneyOut() - nMoneySupply;
 
-    if (nMoneySupply >= Params().MaxMoneyOut())
-        nSubsidy = 0;
+//    if (nMoneySupply >= Params().MaxMoneyOut())
+//        nSubsidy = 0;
 
     return nSubsidy;
 }
